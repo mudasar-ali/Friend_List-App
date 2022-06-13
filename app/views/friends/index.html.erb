@@ -3,7 +3,7 @@
 <h1>Listing All Friends</h1>
 
 <div id="friends">
-<table class="table table-striped">
+<table class="table table-striped table-bordered">
   <thead class="thead-dark">
 <tr>
 <th>First Name</th>
@@ -11,7 +11,8 @@
 <th>Email</th>
 <th>Phone</th>
 <th>Twitter</th>
-<th colspan="3"></th>
+<th>User Id</th>
+<th colspan="2"></th>
 </tr>
 </thead>
 <tbody>
@@ -22,17 +23,20 @@
       <td><%=friend.email%></td>
       <td><%=friend.phone%></td>
       <td><%=friend.twitter%></td>
-      <td>    <span class ="mr-3"> <%=link_to "Show this friend", friend %></span>
+      <td><%=friend.user_id%></td>
+      <td>     <%=link_to "Show Friend", friend %></td>
+      <td><%= link_to "Edit Friend", edit_friend_path(friend) %></td>
 
 
 
-<%= link_to "New friend", new_friend_path %></td>
+
     </tr>
   <% end %>
 
 </tbody>
 
 </table>
+<%= link_to "Add Friend", new_friend_path, class: "btn btn-secondary"%>
 
 
 
